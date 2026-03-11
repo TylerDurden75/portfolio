@@ -6,11 +6,10 @@ import { motion } from "framer-motion";
 import { Technos } from "../data/TechnoData";
 import TechnoComponent from "../components/TechnoComponent";
 import Loading from "../components/Loading";
-import MenuBox from "../components/MenuBox/MenuBox";
+import Header from "../components/Header/Header";
 
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 // const PowerButton = lazy(() => import("../subComponents/PowerButton"));
-const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 
 const MainContainer = styled(motion.div)`
   background-image: ${(props) => props.theme.body};
@@ -70,8 +69,7 @@ const Techno = () => {
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <Container>
-          <LogoComponent />
-          <MenuBox />
+          <Header theme="light" showMenu />
           <SocialIcons />
           <Center>
             <Grid variants={container} initial="hidden" animate="show">

@@ -4,11 +4,10 @@ import { darkTheme, mediaQueries } from "../components/Theme";
 import { motion } from "framer-motion";
 
 import Loading from "../components/Loading";
+import Header from "../components/Header/Header";
 import Card from "../subComponents/Card";
 import { Work } from "../data/WorkData";
 
-// const PowerButton = lazy(() => import("../subComponents/PowerButton"));
-const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const BigTitle = lazy(() => import("../subComponents/BigTitle"));
 const CircularMenu = lazy(() => import("../subComponents/CircularMenu"));
@@ -117,7 +116,7 @@ const WorkPage = () => {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
-          <LogoComponent theme="dark" />
+          <Header theme="dark" showMenu={false} />
           <SocialIcons theme="dark" />
           <Main ref={ref} variants={container} initial="hidden" animate="show">
             {Work.map((d) => (

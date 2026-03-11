@@ -8,8 +8,8 @@ import { mediaQueries } from "../components/Theme";
 
 import Intro from "../components/Intro";
 import Loading from "../components/Loading";
+import Header from "../components/Header/Header";
 
-const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 
 const MainContainer = styled(motion.div)`
@@ -185,8 +185,7 @@ const Main = () => {
       >
         <DarkDiv $click={click} />
         <Container>
-          <LogoComponent theme="dark" />
-
+          <Header theme="dark" showMenu={false} />
           {mq ? <SocialIcons theme="light" /> : <SocialIcons theme="dark" />}
 
           <Center $click={click}>

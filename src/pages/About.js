@@ -4,9 +4,8 @@ import { darkTheme } from "../components/Theme";
 import { motion } from "framer-motion";
 
 import Loading from "../components/Loading";
-import MenuBox from "../components/MenuBox/MenuBox";
+import Header from "../components/Header/Header";
 
-const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const ParticleComponent = lazy(
   () => import("../subComponents/ParticleComponent"),
@@ -32,9 +31,8 @@ const About = () => {
           animate={{ opacity: 1, transition: { duration: 0.5 } }}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
-          <LogoComponent theme="dark" />
+          <Header theme="dark" showMenu />
           <SocialIcons theme="dark" />
-          <MenuBox />
           <ParticleComponent theme="dark" />
           <Description />
         </Box>

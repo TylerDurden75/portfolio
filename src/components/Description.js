@@ -25,7 +25,7 @@ const CenteredWrapper = styled.div`
   `};
 
   ${mediaQueries(40)`
-    max-width: 92vw;
+    max-width: 80vw;
   `};
 `;
 

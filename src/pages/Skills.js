@@ -5,10 +5,8 @@ import { motion } from "framer-motion";
 
 import { mySkills } from "../data/SkillData";
 import Loading from "../components/Loading";
-import MenuBox from "../components/MenuBox/MenuBox";
+import Header from "../components/Header/Header";
 
-const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
-const SoundBar = lazy(() => import("../subComponents/SoundBar"));
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const BigTitle = lazy(() => import("../subComponents/BigTitle"));
 const ParticleComponent = lazy(
@@ -42,6 +40,7 @@ const Grid = styled(motion.div)`
   `};
 
   ${mediaQueries(40)`
+    margin-top: 5rem;
     grid-gap: calc(1.1em + 1.1vw);
   `};
 `;
@@ -67,9 +66,7 @@ const Skills = () => {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
-          <LogoComponent theme="light" />
-          <MenuBox />
-          <SoundBar />
+          <Header theme="light" showMenu />
           <SocialIcons theme="light" />
           <ParticleComponent theme="light" />
 
