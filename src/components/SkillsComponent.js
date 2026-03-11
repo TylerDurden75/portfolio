@@ -23,6 +23,7 @@ const Main = styled(motion.div)`
   ${mediaQueries(50)`
     width: 52vw;
     height: max-content;
+    min-height: 50vh;
   `};
 
   font-family: "Ubuntu Mono", monospace;
@@ -96,14 +97,45 @@ const Description = styled.div`
   `};
 
   strong {
-    margin-bottom: 1rem;
+    margin-bottom: 0.35rem;
     text-transform: uppercase;
+    font-size: 0.85em;
   }
 
   ul,
   p {
     margin-left: 2rem;
   }
+`;
+
+const ListBlock = styled(Description)`
+  font-size: calc(0.5em + 0.75vw);
+  padding: 0.25rem 0;
+  line-height: 1.35;
+
+  strong {
+    font-size: 0.9em;
+  }
+
+  ul {
+    margin-top: 0.2rem;
+  }
+
+  li {
+    margin-bottom: 0.15rem;
+  }
+
+  ${mediaQueries(50)`
+    font-size: calc(0.6em + 0.9vw);
+  `};
+
+  ${mediaQueries(30)`
+    font-size: calc(0.45em + 0.85vw);
+  `};
+
+  ${mediaQueries(25)`
+    font-size: calc(0.4em + 0.75vw);
+  `};
 `;
 
 const SkillsComponent = (props) => {
@@ -119,22 +151,22 @@ const SkillsComponent = (props) => {
         {title}
       </Title>
       <Description>{description}</Description>
-      <Description>
+      <ListBlock>
         <strong>{subTitle}</strong>
         <ul>
           {list.map((l, idx) => {
             return <li key={idx}>{l}</li>;
           })}
         </ul>
-      </Description>
-      <Description>
+      </ListBlock>
+      <ListBlock>
         <strong>{use}</strong>
         <ul>
           {tools.map((t, id) => {
             return <li key={id}>{t}</li>;
           })}
         </ul>
-      </Description>
+      </ListBlock>
     </Main>
   );
 };

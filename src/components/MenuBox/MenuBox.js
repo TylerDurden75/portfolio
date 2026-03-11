@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Menu.css";
 
 const MenuBox = () => {
-  const [techno, setTechno] = useState(true);
+  const [stack, setStack] = useState(true);
   const [about, setAbout] = useState(true);
   const [skills, setSkills] = useState(true);
 
@@ -12,8 +12,8 @@ const MenuBox = () => {
   }, []);
 
   const variousPath = () => {
-    if (window.location.pathname === "/techno") {
-      setTechno(false);
+    if (window.location.pathname === "/stack") {
+      setStack(false);
     }
     if (window.location.pathname === "/about") {
       setAbout(false);
@@ -44,9 +44,9 @@ const MenuBox = () => {
               <Link to="/skills">Skills</Link>
             </li>
           )}
-          {techno && (
+          {stack && (
             <li>
-              <Link to="/techno">Tech</Link>
+              <Link to="/stack">Stack</Link>
             </li>
           )}
         </div>

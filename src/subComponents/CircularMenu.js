@@ -50,7 +50,7 @@ const CircularMenu = () => {
     for (let i = 9; i < 13; i++) {
       const blog = letters[keys[i]];
       blog.onclick = function () {
-        history.push("/techno");
+        history.push("/stack");
       };
     }
 
@@ -72,7 +72,7 @@ const CircularMenu = () => {
   }, [history]);
 
   return (
-    <Circular ref={circleInstance}>* WORK * TECH * SKILLS * ABOUT</Circular>
+    <Circular ref={circleInstance}>* WORK * STACK * SKILLS * ABOUT</Circular>
   );
 };
 

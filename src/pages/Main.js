@@ -210,8 +210,8 @@ const Main = () => {
           {mq ? (
             <TECHNO
               click={+click}
-              onClick={() => setpath("techno")}
-              to="/techno"
+              onClick={() => setpath("stack")}
+              to="/stack"
             >
               {show ? (
                 <motion.h2
@@ -226,15 +226,15 @@ const Main = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  Tech.
+                  Stack.
                 </motion.h2>
               ) : null}
             </TECHNO>
           ) : (
             <TECHNO
               click={+false}
-              onClick={() => setpath("techno")}
-              to="/techno"
+              onClick={() => setpath("stack")}
+              to="/stack"
             >
               {show && (
                 <motion.h2
@@ -249,7 +249,7 @@ const Main = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  Tech.
+                  Stack.
                 </motion.h2>
               )}
             </TECHNO>

@@ -127,7 +127,7 @@ const WorkPage = () => {
           <Rotate ref={circle}>
             <CircularMenu />
           </Rotate>
-          <BigTitle text="WORK" top="70%" right="60%" />
+          <BigTitle text="WORK" bottom="0%" right="60%" />
         </Box>
       </Suspense>
     </ThemeProvider>

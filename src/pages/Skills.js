@@ -11,8 +11,8 @@ const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 const SoundBar = lazy(() => import("../subComponents/SoundBar"));
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const BigTitle = lazy(() => import("../subComponents/BigTitle"));
-const ParticleComponent = lazy(() =>
-  import("../subComponents/ParticleComponent")
+const ParticleComponent = lazy(
+  () => import("../subComponents/ParticleComponent"),
 );
 const SkillsComponent = lazy(() => import("../components/SkillsComponent"));
 
@@ -79,7 +79,7 @@ const Skills = () => {
             })}
           </Grid>
         </Box>
-        <BigTitle text="SKILLS" top="70%" right="60%" />
+        <BigTitle text="SKILLS" bottom="0%" right="35%" />
       </Suspense>
     </ThemeProvider>
   );

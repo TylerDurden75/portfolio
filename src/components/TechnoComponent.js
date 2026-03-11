@@ -43,12 +43,14 @@ const Image = styled.div`
   background-image: ${(props) => `url(${props.img})`};
   width: 100%;
   height: 75%;
-  background-size: cover;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
   border: 1px solid transparent;
   background-position: center center;
 
   ${mediaQueries(25)`
     height:70%;
+    background-size: 55% 55%;
   `};
 
   ${Box}:hover & {

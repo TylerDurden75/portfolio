@@ -8,11 +8,10 @@ import MenuBox from "../components/MenuBox/MenuBox";
 
 const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
-const ParticleComponent = lazy(() =>
-  import("../subComponents/ParticleComponent")
+const ParticleComponent = lazy(
+  () => import("../subComponents/ParticleComponent"),
 );
 const BigTitle = lazy(() => import("../subComponents/BigTitle"));
-const Bubble = lazy(() => import("../components/Bubble"));
 const Description = lazy(() => import("../components/Description"));
 
 const Box = styled(motion.div)`
@@ -38,9 +37,8 @@ const About = () => {
           <MenuBox />
           <ParticleComponent theme="dark" />
           <Description />
-          <Bubble />
         </Box>
-        <BigTitle text="ABOUT" top="25%" right="10%" />
+        <BigTitle text="ABOUT" bottom="0%" right="5%" />
       </Suspense>
     </ThemeProvider>
   );

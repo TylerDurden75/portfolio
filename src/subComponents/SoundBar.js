@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import { mediaQueries } from "../components/Theme";
 import styled from "styled-components";
-import music from "../assets/audio/ES_Flute Alors - La Boucle.mp3";
 import Vinyl from "./Vinyl";
+
+const music = `${process.env.PUBLIC_URL || ""}/assets/audio/ES_Flute Alors - La Boucle.mp3`;
 
 const Box = styled.div`
   display: flex;

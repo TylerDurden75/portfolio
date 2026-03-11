@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Me from "../assets/images/YoKo_Pic.jpg";
-import hi from "../assets/audio/hi-cartoon-girl.wav";
-import { JavaScript } from "./AllSvgs";
 import { mediaQueries } from "./Theme";
+
+const asset = (path) => `${process.env.PUBLIC_URL || ""}/assets/${path}`;
+const Me = asset("images/YoKo_Pic.jpg");
+const hi = asset("audio/hi-cartoon-girl.wav");
+
+const VUE_ICON = "https://vuejs.org/images/logo.png";
+const TS_ICON = "https://www.typescriptlang.org/branding/ts-logo-128.svg";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -133,6 +137,20 @@ const Text = styled.div`
   `};
 `;
 
+const SubtitleRow = styled.h6`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  flex-wrap: wrap;
+`;
+
+const TechIcon = styled.img`
+  height: 1.1em;
+  width: auto;
+  vertical-align: middle;
+  object-fit: contain;
+`;
+
 const Intro = () => {
   const ref = useRef(null);
   const [click, setClick] = useState(true);
@@ -208,10 +226,13 @@ const Intro = () => {
             <audio src={hi} ref={ref} />
           </motion.h1>
           <h3>I'm Thibault.</h3>
-          <h6>
-            Fullstack JavaScript Developer.
-            <JavaScript style={{ position: "absolute", marginLeft: "20px" }} />
-          </h6>
+          <SubtitleRow>
+            Senior Frontend Engineer ·
+            <TechIcon src={VUE_ICON} alt="Vue.js" />
+            Vue.js &amp;
+            <TechIcon src={TS_ICON} alt="TypeScript" />
+            TypeScript.
+          </SubtitleRow>
         </Text>
       </SubBox>
       <SubBox>

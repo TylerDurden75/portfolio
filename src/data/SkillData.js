@@ -1,24 +1,42 @@
 export const mySkills = [
   {
     id: 1,
-    // icon: Mountain,
-    title: "Front-End Development",
+    title: "Frontend & Architecture",
     description:
-      "React came to me naturally to build simple but dynamic user interfaces. I love to create reusable components, and keep my code clean and scalable.",
-    subTitle: "FRAMEWORK / LIBRARY",
-    list: ["React JS", "Bootstrap"],
-    use: "Tools",
-    tools: ["NPM libaries", "Hooks/Redux"],
+      "Stack and practices aligned with scalable, maintainable frontends.",
+    subTitle: "Frontend",
+    list: [
+      "Vue.js (Vue 2 & 3), Vite, JavaScript ES6+, TypeScript",
+      "Composition API, Pinia, Vuex, State management",
+      "HTML5, CSS3, Responsive design",
+      "WebSocket, REST API, UI components, Design Systems, SPA",
+      "Web accessibility (a11y)",
+    ],
+    use: "Architecture & Performance",
+    tools: [
+      "Clean Architecture, Clean Code",
+      "Web performance (TTI, bundle, re-renders)",
+      "Lazy loading, Code splitting, SSR",
+      "Scalability, Maintainability",
+    ],
   },
   {
     id: 2,
-    // icon: Iceberg,
-    title: "Back-End Development",
+    title: "Tests, Quality & Delivery",
     description:
-      "I choose Node JS because it makes the code extensible and evolutive thanks to JavaScript. It also works well for asynchronous calls thanks to the event loop.",
-    subTitle: "FRAMEWORK / LIBRARY",
-    list: ["Node JS", "Express JS"],
-    use: "Tools",
-    tools: ["MongoDB", "Firebase/AWS/Cloudinary/Stripe"],
+      "Testing, code quality, documentation. Collaboration with product, design & backend. Technical mentoring. Solution-oriented delivery.",
+    subTitle: "Tests & Quality",
+    list: [
+      "Unit testing (Vitest, Jest)",
+      "E2E testing (Playwright, Robot Framework)",
+      "Code quality, Testing strategy",
+      "Code reviews, Documentation (JSDoc, TypeDoc)",
+    ],
+    use: "Tools, Methods & DevOps",
+    tools: [
+      "Git, GitLab, CI/CD, Jira",
+      "Agile, Scrum",
+      "Docker, Kubernetes, Linux",
+    ],
   },
 ];

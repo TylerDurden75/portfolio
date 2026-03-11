@@ -244,7 +244,7 @@ const Starter = styled.div`
 const Arm = styled.div`
   position: absolute;
   margin: auto;
-  top: 115px;
+  top: 25px;
   left: 120px;
   bottom: 220px;
   right: 0;
@@ -254,7 +254,8 @@ const Arm = styled.div`
   border-radius: 10%;
   transform: rotate(20deg);
 
-  animation: oscillating 2s linear infinite;
+  animation: ${(props) =>
+    props.click ? "oscillating 2s linear infinite" : "none"};
 
   @keyframes oscillating {
     0% {
@@ -291,13 +292,13 @@ const Arm = styled.div`
   }
 
   &:after {
-    left: -2px;
-    right: 0;
+    left: 0px;
+    right: 0px;
     bottom: 0;
-    top: 180px;
+    top: 100px;
     width: 10px;
     height: 15px;
-    border-radius: 20%;
+    border-radius: 50%;
   }
 `;
 
@@ -339,13 +340,13 @@ const Vinyl = (props) => {
         <Groove />
         <Label>
           <Title>TJ DEV</Title>
-          <Group>MERN</Group>
+          <Group>Vue&TS</Group>
         </Label>
       </Disc>
       <Button />
       <Starter />
       <Pitch />
-      <Arm />
+      <Arm click={props.click} />
     </Turnable>
   );
 };

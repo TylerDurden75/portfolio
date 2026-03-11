@@ -150,15 +150,7 @@ const DarkDiv = styled.div`
 
 const Home = () => {
   const [click, setClick] = useState(false);
-  const [show, setShow] = useState(false);
-  const [path, setpath] = useState("");
-
-  const handleClick = () => {
-    setClick(!click);
-    setShow(true);
-  };
-
-  const moveY = {
+  const [path, setpath] = useState("");  const moveY = {
     y: "100%",
   };
   const moveX = {
@@ -189,7 +181,7 @@ const Home = () => {
           </Center>
 
           {mq ? (
-            <TECHNO onClick={() => setpath("techno")} to="/techno">
+            <TECHNO onClick={() => setpath("stack")} to="/stack">
               <motion.h2
                 initial={{
                   y: -200,
@@ -202,14 +194,14 @@ const Home = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                Tech.
+                Stack.
               </motion.h2>
             </TECHNO>
           ) : (
             <TECHNO
               click={+false}
-              onClick={() => setpath("techno")}
-              to="/techno"
+              onClick={() => setpath("stack")}
+              to="/stack"
             >
               <motion.h2
                 initial={{
@@ -223,7 +215,7 @@ const Home = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                Tech.
+                Stack.
               </motion.h2>
             </TECHNO>
           )}

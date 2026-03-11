@@ -3,7 +3,7 @@ import { Switch, Route, useLocation } from "react-router-dom";
 
 import GlobalStyle from "./globalStyles";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./components/Theme";
+import { lightTheme } from "./components/Theme";
 import { AnimatePresence } from "framer-motion";
 
 import Loading from "./components/Loading";
@@ -31,7 +31,7 @@ function App() {
               <Route exact path="/" component={Main} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/techno" component={Techno} />
+              <Route exact path="/stack" component={Techno} />
               <Route exact path="/work" component={WorkPage} />
               <Route exact path="/skills" component={Skills} />
               <Route component={ErrorBoundary} />
