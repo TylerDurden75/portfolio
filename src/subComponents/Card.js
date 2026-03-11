@@ -66,6 +66,12 @@ const Description = styled.h2`
   font-weight: 500;
 `;
 
+const Highlight = styled.span`
+  text-decoration: none;
+  display: block;
+  margin-top: 0.35rem;
+`;
+
 const Tags = styled.div`
   border-top: 2px solid ${(props) => props.theme.text};
   padding-top: 0.5rem;
@@ -126,12 +132,15 @@ const Item = {
 };
 
 const Card = (props) => {
-  const { id, name, description, tags, demo, github } = props.data;
+  const { id, name, description, highlight, tags, demo, github } = props.data;
 
   return (
     <Box key={id} variants={Item}>
       <Title>{name}</Title>
-      <Description>{description}</Description>
+      <Description>
+        {description}
+        {highlight && <Highlight>{highlight}</Highlight>}
+      </Description>
       <Tags>
         {tags.map((t, id) => {
           return <Tag key={id}>#{t}</Tag>;
