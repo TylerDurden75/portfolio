@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PaperPlane } from "../components/AllSvgs";
+import { PaperPlane } from "./AllSvgs";
 
 const Box = styled.div`
   width: 50px;

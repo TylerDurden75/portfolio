@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { mediaQueries } from "../components/Theme";
+import { mediaQueries } from "./Theme";
 import CircleType from "circletype";
 
 const Circular = styled.div`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { mediaQueries } from "../components/Theme";
+import { mediaQueries } from "./Theme";
 
 const Text = styled.h1`
   position: fixed;

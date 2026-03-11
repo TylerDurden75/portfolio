@@ -11,7 +11,7 @@ import Loading from "./components/Loading";
 const Main = lazy(() => import("./pages/Main"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
-const Techno = lazy(() => import("./pages/Techno"));
+const Stack = lazy(() => import("./pages/Stack"));
 const WorkPage = lazy(() => import("./pages/Work"));
 const Skills = lazy(() => import("./pages/Skills"));
 const ErrorBoundary = lazy(() => import("./pages/ErrorBoundary"));
@@ -29,7 +29,7 @@ function App() {
               <Route exact path="/" component={Main} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/stack" component={Techno} />
+              <Route exact path="/stack" component={Stack} />
               <Route exact path="/work" component={WorkPage} />
               <Route exact path="/skills" component={Skills} />
               <Route component={ErrorBoundary} />

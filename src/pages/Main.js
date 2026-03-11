@@ -10,7 +10,7 @@ import Intro from "../components/Intro";
 import Loading from "../components/Loading";
 import Header from "../components/Header/Header";
 
-const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
+const SocialIcons = lazy(() => import("../components/SocialIcons"));
 
 const MainContainer = styled(motion.div)`
   background: ${(props) => props.theme.body};
@@ -43,7 +43,7 @@ const Container = styled.div`
   padding: 2rem;
 `;
 
-const TECHNO = styled(NavLink)`
+const STACK = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 50%;
@@ -115,7 +115,7 @@ const Center = styled.button`
   transition: all 1s ease;
 
   & > :last-child {
-    display: ${(props) => (props.$click ? "none" : "inline-block")}
+    display: ${(props) => (props.$click ? "none" : "inline-block")};
     padding-top: 1rem;
   }
 
@@ -140,20 +140,26 @@ const DarkDiv = styled.div`
   width: ${(props) => (props.$click ? "50%" : "0%")};
   height: ${(props) => (props.$click ? "100%" : "0%")};
   z-index: 1;
-  transition: height 0.5s ease, width 1s ease 0.5s;
+  transition:
+    height 0.5s ease,
+    width 1s ease 0.5s;
 
   ${(props) =>
     props.$click
-      ? mediaQueries(50)`
+      ? `
+    ${mediaQueries(50)`
       height: 50%;
-      right:0;
+      right: 0;
       width: 100%;
       transition: width 0.5s ease, height 1s ease 0.5s;
-      `
-      : mediaQueries(50)`
-        height: 0;
-        width: 0;
-  `};
+    `}
+  `
+      : `
+    ${mediaQueries(50)`
+      height: 0;
+      width: 0;
+    `}
+  `}
 `;
 
 const Main = () => {
@@ -207,11 +213,7 @@ const Main = () => {
           </Center>
 
           {mq ? (
-            <TECHNO
-              click={+click}
-              onClick={() => setpath("stack")}
-              to="/stack"
-            >
+            <STACK click={+click} onClick={() => setpath("stack")} to="/stack">
               {show ? (
                 <motion.h2
                   initial={{
@@ -228,13 +230,9 @@ const Main = () => {
                   Stack.
                 </motion.h2>
               ) : null}
-            </TECHNO>
+            </STACK>
           ) : (
-            <TECHNO
-              click={+false}
-              onClick={() => setpath("stack")}
-              to="/stack"
-            >
+            <STACK click={+false} onClick={() => setpath("stack")} to="/stack">
               {show && (
                 <motion.h2
                   initial={{
@@ -251,7 +249,7 @@ const Main = () => {
                   Stack.
                 </motion.h2>
               )}
-            </TECHNO>
+            </STACK>
           )}
 
           {show && (

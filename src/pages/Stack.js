@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { mediaQueries } from "../components/Theme";
 import { motion } from "framer-motion";
 
-import { Technos } from "../data/TechnoData";
-import TechnoComponent from "../components/TechnoComponent";
+import { Stacks } from "../data/StackData";
+import StackComponent from "../components/StackComponent";
 import Loading from "../components/Loading";
 import Header from "../components/Header/Header";
 
-const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
-// const PowerButton = lazy(() => import("../subComponents/PowerButton"));
+const SocialIcons = lazy(() => import("../components/SocialIcons"));
 
 const MainContainer = styled(motion.div)`
   background-image: ${(props) => props.theme.body};
@@ -59,7 +58,7 @@ const container = {
   },
 };
 
-const Techno = () => {
+const Stack = () => {
   return (
     <Suspense fallback={<Loading />}>
       <MainContainer
@@ -73,8 +72,8 @@ const Techno = () => {
           <SocialIcons />
           <Center>
             <Grid variants={container} initial="hidden" animate="show">
-              {Technos.map((techno) => {
-                return <TechnoComponent key={techno.id} techno={techno} />;
+              {Stacks.map((stack) => {
+                return <StackComponent key={stack.id} stack={stack} />;
               })}
             </Grid>
           </Center>
@@ -84,4 +83,4 @@ const Techno = () => {
   );
 };
 
-export default Techno;
+export default Stack;

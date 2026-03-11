@@ -4,8 +4,8 @@ import { mediaQueries } from "../components/Theme";
 
 import Loading from "../components/Loading";
 
-const Look = lazy(() => import("../subComponents/Look"));
-const Door = lazy(() => import("../subComponents/Door"));
+const Look = lazy(() => import("../components/Look"));
+const Door = lazy(() => import("../components/Door"));
 
 const Box = styled.div`
   width: 100vw;

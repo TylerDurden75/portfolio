@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import Loading from "../components/Loading";
 import Header from "../components/Header/Header";
 
-const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
+const SocialIcons = lazy(() => import("../components/SocialIcons"));
 const ParticleComponent = lazy(
-  () => import("../subComponents/ParticleComponent"),
+  () => import("../components/ParticleComponent"),
 );
-const BigTitle = lazy(() => import("../subComponents/BigTitle"));
+const BigTitle = lazy(() => import("../components/BigTitle"));
 const Description = lazy(() => import("../components/Description"));
 
 const Box = styled(motion.div)`

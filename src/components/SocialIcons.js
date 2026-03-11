@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Github, Linkedin } from "../components/AllSvgs";
-import { darkTheme, mediaQueries } from "../components/Theme";
+import { Github, Linkedin } from "./AllSvgs";
+import { darkTheme, mediaQueries } from "./Theme";
 import Plane from "./Plane";
 
 const Icons = styled.div`

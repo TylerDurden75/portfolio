@@ -97,8 +97,8 @@ const item = {
   show: { scale: 1, transition: { type: "spring", duration: 0.5 } },
 };
 
-const TechnoComponent = (props) => {
-  const { name, tags, imgSrc, link } = props.techno;
+const StackComponent = (props) => {
+  const { name, tags, imgSrc, link } = props.stack;
   return (
     <Container variants={item}>
       <Box target="_blank" to={{ pathname: link }}>
@@ -114,4 +114,4 @@ const TechnoComponent = (props) => {
   );
 };
 
-export default TechnoComponent;
+export default StackComponent;

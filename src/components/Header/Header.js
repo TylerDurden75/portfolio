@@ -1,8 +1,8 @@
 import { Fragment, lazy, Suspense } from "react";
 import MenuBox from "../MenuBox/MenuBox";
 
-const LogoComponent = lazy(() => import("../../subComponents/LogoComponent"));
-const SoundBar = lazy(() => import("../../subComponents/SoundBar"));
+const LogoComponent = lazy(() => import("../LogoComponent"));
+const SoundBar = lazy(() => import("../SoundBar"));
 
 /**
  * Header commun : Logo (TJ), menu principal, et SoundBar (platine).

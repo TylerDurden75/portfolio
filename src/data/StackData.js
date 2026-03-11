@@ -1,4 +1,4 @@
-export const Technos = [
+export const Stacks = [
   {
     id: 1,
     name: "Vue.JS 2 & 3",
@@ -46,7 +46,8 @@ export const Technos = [
     id: 7,
     name: "Node.js",
     tags: ["npm", "async", "https", "express.js", "mongoose"],
-    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    imgSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
     link: "https://nodejs.org/en/",
   },
   {

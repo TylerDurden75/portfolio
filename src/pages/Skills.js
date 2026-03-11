@@ -7,10 +7,10 @@ import { mySkills } from "../data/SkillData";
 import Loading from "../components/Loading";
 import Header from "../components/Header/Header";
 
-const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
-const BigTitle = lazy(() => import("../subComponents/BigTitle"));
+const SocialIcons = lazy(() => import("../components/SocialIcons"));
+const BigTitle = lazy(() => import("../components/BigTitle"));
 const ParticleComponent = lazy(
-  () => import("../subComponents/ParticleComponent"),
+  () => import("../components/ParticleComponent"),
 );
 const SkillsComponent = lazy(() => import("../components/SkillsComponent"));
 

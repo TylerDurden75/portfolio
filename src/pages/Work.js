@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 
 import Loading from "../components/Loading";
 import Header from "../components/Header/Header";
-import Card from "../subComponents/Card";
+import Card from "../components/Card";
 import { Work } from "../data/WorkData";
 
-const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
-const BigTitle = lazy(() => import("../subComponents/BigTitle"));
-const CircularMenu = lazy(() => import("../subComponents/CircularMenu"));
+const SocialIcons = lazy(() => import("../components/SocialIcons"));
+const BigTitle = lazy(() => import("../components/BigTitle"));
+const CircularMenu = lazy(() => import("../components/CircularMenu"));
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};

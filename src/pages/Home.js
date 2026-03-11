@@ -10,7 +10,7 @@ import Intro from "../components/Intro";
 import Loading from "../components/Loading";
 import Header from "../components/Header/Header";
 
-const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
+const SocialIcons = lazy(() => import("../components/SocialIcons"));
 
 const MainContainer = styled(motion.div)`
   background: ${(props) => props.theme.body};
@@ -43,7 +43,7 @@ const Container = styled.div`
   padding: 2rem;
 `;
 
-const TECHNO = styled(NavLink)`
+const STACK = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
@@ -150,7 +150,8 @@ const DarkDiv = styled.div`
 
 const Home = () => {
   const [click, setClick] = useState(false);
-  const [path, setpath] = useState("");  const moveY = {
+  const [path, setpath] = useState("");
+  const moveY = {
     y: "100%",
   };
   const moveX = {
@@ -181,7 +182,7 @@ const Home = () => {
           </Center>
 
           {mq ? (
-            <TECHNO onClick={() => setpath("stack")} to="/stack">
+            <STACK onClick={() => setpath("stack")} to="/stack">
               <motion.h2
                 initial={{
                   y: -200,
@@ -196,13 +197,9 @@ const Home = () => {
               >
                 Stack.
               </motion.h2>
-            </TECHNO>
+            </STACK>
           ) : (
-            <TECHNO
-              click={+false}
-              onClick={() => setpath("stack")}
-              to="/stack"
-            >
+            <STACK click={+false} onClick={() => setpath("stack")} to="/stack">
               <motion.h2
                 initial={{
                   y: -200,
@@ -217,7 +214,7 @@ const Home = () => {
               >
                 Stack.
               </motion.h2>
-            </TECHNO>
+            </STACK>
           )}
 
           <ABOUT $click={+click} to="/about">

@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { mediaQueries } from "../components/Theme";
+import { mediaQueries } from "./Theme";
 import { motion } from "framer-motion";
-import { Github, Hand } from "../components/AllSvgs";
+import { Github, Hand } from "./AllSvgs";
 
 const Box = styled(motion.li)`
   width: 16rem;
@@ -91,6 +91,7 @@ const Tag = styled.span`
 const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Linki = styled(NavLink)`
@@ -108,7 +109,7 @@ const Linki = styled(NavLink)`
 `;
 
 const Git = styled(NavLink)`
-  color: inherit;
+  fill: ${(props) => props.theme.text};
   text-decoration: none;
 
   ${Box}:hover & {

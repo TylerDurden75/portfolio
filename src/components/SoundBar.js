@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { mediaQueries } from "../components/Theme";
+import { mediaQueries } from "./Theme";
 import styled from "styled-components";
 import Vinyl from "./Vinyl";
 

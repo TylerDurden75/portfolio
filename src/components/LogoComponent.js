@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { darkTheme, mediaQueries } from "../components/Theme";
+import { darkTheme, mediaQueries } from "./Theme";
 
 const Logo = styled.h1`
   display: inline-block;
