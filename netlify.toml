@@ -1,0 +1,9 @@
+[build]
+  command = "yarn build"
+  publish = "build"
+
+# SPA : toute URL renvoie index.html pour que React Router gère la 404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
