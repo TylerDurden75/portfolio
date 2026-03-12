@@ -20,7 +20,8 @@ const Box = styled(motion.div)`
   height: 45vh; //55
   display: flex;
 
-  background: linear-gradient(
+  background:
+    linear-gradient(
         to right,
         ${(props) => props.theme.body} 50%,
         ${(props) => props.theme.text} 50%
@@ -73,7 +74,8 @@ const Box = styled(motion.div)`
     border: none;
     border-top: 2px solid ${(props) => props.theme.body};
     border-bottom: 2px solid ${(props) => props.theme.text};
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         ${(props) => props.theme.body} 50%,
         ${(props) => props.theme.text} 50%
       ),
@@ -82,7 +84,9 @@ const Box = styled(motion.div)`
         ${(props) => props.theme.text} 50%
       );
     background-size: 2px 100%;
-    background-position: 0 0, 100% 0;
+    background-position:
+      0 0,
+      100% 0;
     background-repeat: no-repeat;
   }
 `;
@@ -158,17 +162,17 @@ const Intro = () => {
 
   const handleMouseOver = (e) => {
     const title = document.getElementById("title");
-    title.style.cursor = "grab";
+    if (title) title.style.cursor = "grab";
   };
 
   const handleMouseDown = (e) => {
     const title = document.getElementById("title");
-    title.style.cursor = "grabbing";
+    if (title) title.style.cursor = "grabbing";
   };
 
   const handleMouseUp = (e) => {
     const title = document.getElementById("title");
-    title.style.cursor = "grab";
+    if (title) title.style.cursor = "grab";
   };
 
   useEffect(() => {
@@ -221,12 +225,26 @@ const Intro = () => {
             }}
             onClick={() => handleClick()}
             style={{ display: "block" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
           >
             Hi,
             <audio src={hi} ref={ref} />
           </motion.h1>
-          <h3>I'm Thibault.</h3>
-          <SubtitleRow>
+          <motion.h3
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+          >
+            I'm Thibault.
+          </motion.h3>
+          <SubtitleRow
+            as={motion.h6}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+          >
             Senior Frontend Engineer ·
             <TechIcon src={VUE_ICON} alt="Vue.js" />
             Vue.js &amp;
@@ -239,7 +257,7 @@ const Intro = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
         >
           <img src={Me} alt="Profile" className="pic" />
         </motion.div>

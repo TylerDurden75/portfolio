@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy, useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -162,15 +162,41 @@ const DarkDiv = styled.div`
   `}
 `;
 
+const LogoVortexWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center center;
+  backface-visibility: hidden;
+`;
+
 const Main = () => {
   const [click, setClick] = useState(false);
   const [show, setShow] = useState(false);
   const [path, setpath] = useState("");
+  const [vortexPhase, setVortexPhase] = useState("idle"); // "idle" | "vortex" | "done"
+  const vortexCompletedRef = useRef(false);
 
   const handleClick = () => {
+    if (vortexPhase !== "idle") return;
+    setVortexPhase("vortex");
+  };
+
+  const onVortexComplete = () => {
+    if (vortexCompletedRef.current) return;
+    vortexCompletedRef.current = true;
+    setVortexPhase("done");
     setClick(true);
     setShow(true);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (vortexPhase === "idle") setVortexPhase("vortex");
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [vortexPhase]);
 
   const moveY = {
     y: "100%",
@@ -195,21 +221,47 @@ const Main = () => {
           {mq ? <SocialIcons theme="light" /> : <SocialIcons theme="dark" />}
 
           <Center $click={click}>
-            {mq ? (
-              <ThibLogo
-                onClick={() => handleClick()}
-                width={click ? 55 : 200}
-                height={click ? 80 : 250}
-                fill="currentColor"
-              />
-            ) : (
-              <ThibLogo
-                onClick={() => handleClick()}
-                width={click ? 75 : 300}
-                height={click ? 100 : 400}
-                fill="currentColor"
-              />
-            )}
+            <LogoVortexWrapper
+              initial={false}
+              animate={
+                vortexPhase === "vortex"
+                  ? {
+                      rotate: 360 * 10,
+                      scale: 0,
+                      opacity: 1,
+                    }
+                  : { rotate: 0, scale: 1, opacity: 1 }
+              }
+              transition={
+                vortexPhase === "vortex"
+                  ? {
+                      duration: 1.5,
+                      ease: [0.35, 0, 0.65, 1],
+                    }
+                  : { duration: 0 }
+              }
+              onAnimationComplete={() => {
+                if (vortexPhase === "vortex") onVortexComplete();
+              }}
+            >
+              {mq ? (
+                <ThibLogo
+                  onClick={() => handleClick()}
+                  width={click ? 55 : 200}
+                  height={click ? 80 : 250}
+                  fill="currentColor"
+                  style={{ position: "relative", zIndex: 1 }}
+                />
+              ) : (
+                <ThibLogo
+                  onClick={() => handleClick()}
+                  width={click ? 75 : 300}
+                  height={click ? 100 : 400}
+                  fill="currentColor"
+                  style={{ position: "relative", zIndex: 1 }}
+                />
+              )}
+            </LogoVortexWrapper>
           </Center>
 
           {mq ? (
