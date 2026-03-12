@@ -71,7 +71,6 @@ export const Work = [
       "stripe-api",
     ],
 
-    demo: "https://mern-commerce-webapp.herokuapp.com",
     github: "https://github.com/TylerDurden75/mern-commerce",
   },
   {
@@ -81,7 +80,6 @@ export const Work = [
       "It's a website built with NodeJS for tour operator reservation. Map like Google Map functionality, payment method. Database on Cloud with AWS.",
     tags: ["nodeJS", "mongoDB", "expressJS", "pug"],
 
-    demo: "https://nodetours.herokuapp.com/",
     github: "https://github.com/TylerDurden75/natours-node-app",
   },
   {
@@ -91,7 +89,6 @@ export const Work = [
       "It's clothes store built with React. State manage with Redux. Payment method with Stripe-API. Authentication with GoogleAuthProvider",
     tags: ["react", "redux", "stripe-api", "firebase"],
 
-    demo: "https://ecom-shop-react.herokuapp.com/",
     github: "https://github.com/TylerDurden75/ecom-react-app",
   },
   {
