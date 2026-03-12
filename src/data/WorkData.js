@@ -36,6 +36,7 @@ export const Work = [
       "docker",
     ],
     github: "https://github.com/TylerDurden75/RisquesAvantAchat",
+    demo: "https://risques-avant-achat.vercel.app",
   },
   {
     id: 3,
