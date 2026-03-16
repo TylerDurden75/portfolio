@@ -149,7 +149,12 @@ const Card = (props) => {
       </Tags>
       <Footer>
         {demo ? (
-          <Linki to={{ pathname: `${demo}` }} target="_blank">
+          <Linki
+            to={{ pathname: `${demo}` }}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Voir le projet en ligne"
+          >
             Visit
           </Linki>
         ) : (
@@ -157,16 +162,22 @@ const Card = (props) => {
             to={{ pathname: `${demo}` }}
             target="_blank"
             style={{ visibility: "hidden" }}
+            aria-hidden="true"
           >
             Visit
           </Linki>
         )}
         {github ? (
-          <Git to={{ pathname: `${github}` }} target="_blank">
+          <Git
+            to={{ pathname: `${github}` }}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Code source sur GitHub"
+          >
             <Github width={30} height={30} />
           </Git>
         ) : (
-          <Hand width={30} height={30} />
+          <Hand width={30} height={30} aria-hidden="true" />
         )}
       </Footer>
     </Box>

@@ -220,7 +220,7 @@ const Main = () => {
           <Header theme="dark" showMenu={false} />
           {mq ? <SocialIcons theme="light" /> : <SocialIcons theme="dark" />}
 
-          <Center $click={click}>
+          <Center $click={click} aria-label="Afficher le menu du portfolio">
             <LogoVortexWrapper
               initial={false}
               animate={

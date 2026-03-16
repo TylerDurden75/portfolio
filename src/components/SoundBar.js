@@ -13,6 +13,10 @@ const Box = styled.div`
   left: 95%;
   top: 2rem;
   z-index: 10;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
 
   ${mediaQueries(70)`
     left:92%;
@@ -34,16 +38,19 @@ const SoundBar = () => {
 
   const handleClick = () => {
     setClick(!click);
-
-    if (!click) {
-      ref.current.play();
-    } else {
-      ref.current.pause();
+    if (ref.current) {
+      if (!click) ref.current.play();
+      else ref.current.pause();
     }
   };
 
   return (
-    <Box onClick={() => handleClick()}>
+    <Box
+      as="button"
+      type="button"
+      onClick={handleClick}
+      aria-label={click ? "Mettre la musique en pause" : "Lire la musique"}
+    >
       <Vinyl click={click} />
       <audio src={music} ref={ref} loop />
     </Box>

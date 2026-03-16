@@ -130,13 +130,21 @@ const MenuBox = ({ inHeader = false }) => {
     }
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <Box $inHeader={inHeader}>
+    <Box $inHeader={inHeader} role="navigation" aria-label="Menu principal">
       <Nav>
-        <Input type="checkbox" />
+        <Input
+          type="checkbox"
+          id="menu-toggle"
+          aria-label="Ouvrir ou fermer le menu de navigation"
+          aria-expanded={menuOpen}
+          onChange={(e) => setMenuOpen(e.target.checked)}
+        />
         <Line />
         <Line />
-        <Menu>
+        <Menu aria-label="Liens de navigation">
           {about && (
             <MenuItem>
               <Link to="/about">About</Link>

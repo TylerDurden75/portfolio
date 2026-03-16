@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -7,7 +7,31 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Fullstack JavaScript developer living in Paris, using MongoDB, ExpressJS, React and NodeJS"
+      content="Portfolio de Thibault J — Senior Frontend Engineer à Paris. Vue.js, TypeScript, React. Projets, compétences et contact."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="sitemap" type="application/xml" href="%PUBLIC_URL%/sitemap.xml" />
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="TJ | Portfolio — Senior Frontend Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio de Thibault J. Vue.js, TypeScript, React. Projets et contact à Paris."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="TJ | Portfolio — Senior Frontend Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio de Thibault J. Vue.js, TypeScript, React. Projets et contact à Paris."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -17,7 +41,51 @@
       href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Pacifico&family=Source+Sans+Pro:wght@400;600;700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <title>TJ | Portfolio</title>
+    <title>TJ | Portfolio — Senior Frontend Engineer</title>
+    <!-- Données structurées JSON-LD (Person + WebSite), URL calculée à la volée -->
+    <script>
+    (function() {
+      var base = document.location.origin + (document.location.pathname.replace(/\/$/, '') || '');
+      var data = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": base + "#person",
+            "name": "Thibault J",
+            "url": base,
+            "jobTitle": "Senior Frontend Engineer",
+            "description": "Développeur frontend à Paris. Spécialisé Vue.js, TypeScript et React. Portfolio de projets et compétences.",
+            "image": base + "/logo192.png",
+            "knowsAbout": ["Vue.js", "TypeScript", "React", "JavaScript", "Frontend"],
+            "sameAs": [
+              "https://github.com/TylerDurden75",
+              "https://www.linkedin.com/in/thibaultj-dev"
+            ],
+            "email": "thibaultj.dev@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paris",
+              "addressCountry": "FR"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": base + "#website",
+            "name": "TJ | Portfolio",
+            "url": base,
+            "description": "Portfolio de Thibault J — Senior Frontend Engineer à Paris. Vue.js, TypeScript, React.",
+            "publisher": { "@id": base + "#person" },
+            "inLanguage": "fr-FR"
+          }
+        ]
+      };
+      var s = document.createElement("script");
+      s.type = "application/ld+json";
+      s.text = JSON.stringify(data);
+      document.head.appendChild(s);
+    })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

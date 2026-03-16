@@ -11,6 +11,10 @@ const Box = styled.div`
   cursor: pointer;
   transform-style: preserve-3d;
   transform: perspective(2500px);
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
 `;
 
 const Front = styled.div`
@@ -130,7 +134,12 @@ const Door = () => {
   };
 
   return (
-    <Box onClick={handleClick}>
+    <Box
+      as="button"
+      type="button"
+      onClick={handleClick}
+      aria-label="Retour à l'accueil"
+    >
       <Front>
         <Cell />
       </Front>

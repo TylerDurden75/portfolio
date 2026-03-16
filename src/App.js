@@ -23,6 +23,10 @@ function App() {
     <Fragment>
       <ThemeProvider theme={lightTheme}>
         <GlobalStyle />
+        <a href="#main-content" className="skip-link">
+          Aller au contenu
+        </a>
+        <main id="main-content" tabIndex={-1}>
         <Suspense fallback={<Loading />}>
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
@@ -36,6 +40,7 @@ function App() {
             </Switch>
           </AnimatePresence>
         </Suspense>
+        </main>
       </ThemeProvider>
     </Fragment>
   );

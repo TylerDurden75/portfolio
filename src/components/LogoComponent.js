@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { darkTheme, mediaQueries } from "./Theme";
 
@@ -9,6 +9,7 @@ const Logo = styled.h1`
     props.color === "dark" ? darkTheme.text : darkTheme.body};
   font-family: "Karla", sans-serif;
   font-size: 3.3rem;
+  text-decoration: none;
 
   position: fixed;
   left: 2rem;
@@ -25,16 +26,8 @@ const Logo = styled.h1`
 `;
 
 const LogoComponent = (props) => {
-  const history = useHistory();
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    let url = "/home";
-    history.push(url);
-  };
-
   return (
-    <Logo color={props.theme} onClick={handleClick}>
+    <Logo as={Link} to="/home" color={props.theme} aria-label="Retour à l'accueil">
       TJ
     </Logo>
   );

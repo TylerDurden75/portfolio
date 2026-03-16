@@ -53,7 +53,9 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noopener noreferrer"
           to={{ pathname: "mailto:thibaultj.dev@gmail.com" }}
+          aria-label="Envoyer un email"
         >
           <Plane
             width={30}
@@ -72,7 +74,9 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noopener noreferrer"
           to={{ pathname: "https://github.com/TylerDurden75" }}
+          aria-label="Profil GitHub"
         >
           <Github
             width={30}
@@ -91,7 +95,9 @@ const SocialIcons = (props) => {
         <NavLink
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noopener noreferrer"
           to={{ pathname: "https://www.linkedin.com/in/thibaultj-dev" }}
+          aria-label="Profil LinkedIn"
         >
           <Linkedin
             width={30}
