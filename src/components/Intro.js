@@ -101,9 +101,9 @@ const SubBox = styled(motion.div)`
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    /* object-fit: cover; */
     width: 100%;
-    height: 100%; //auto ?
+    height: 100%;
+    object-fit: cover;
   }
 
   ${mediaQueries(50)`
@@ -141,11 +141,14 @@ const Text = styled.div`
   `};
 `;
 
-const SubtitleRow = styled.h6`
+const SubtitleRow = styled.h3`
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
   flex-wrap: wrap;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
 `;
 
 const TechIcon = styled.img`
@@ -232,23 +235,23 @@ const Intro = () => {
             Hi,
             <audio src={hi} ref={ref} />
           </motion.h1>
-          <motion.h3
+          <motion.h2
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.1 }}
           >
             I'm Thibault.
-          </motion.h3>
+          </motion.h2>
           <SubtitleRow
-            as={motion.h6}
+            as={motion.h3}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.4 }}
           >
             Senior Frontend Engineer ·
-            <TechIcon src={VUE_ICON} alt="Vue.js" />
+            <TechIcon src={VUE_ICON} alt="Vue.js" width="32" height="32" />
             Vue.js &amp;
-            <TechIcon src={TS_ICON} alt="TypeScript" />
+            <TechIcon src={TS_ICON} alt="TypeScript" width="32" height="32" />
             TypeScript.
           </SubtitleRow>
         </Text>
@@ -259,7 +262,13 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <img src={Me} alt="Profile" className="pic" />
+          <img
+            src={Me}
+            alt="Profile"
+            className="pic"
+            width="359"
+            height="389"
+          />
         </motion.div>
       </SubBox>
     </Box>
