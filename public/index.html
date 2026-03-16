@@ -34,7 +34,6 @@
       content="Portfolio de Thibault J. Vue.js, TypeScript, React. Projets et contact à Paris."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -97,5 +96,18 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Manifest chargé après le rendu pour ne pas être dans la chaîne critique (LCP) -->
+    <script>
+    (function() {
+      function addManifest() {
+        var link = document.createElement("link");
+        link.rel = "manifest";
+        link.href = (document.location.pathname.replace(/\/$/, "") || "") + "/manifest.json";
+        document.head.appendChild(link);
+      }
+      if (document.readyState === "complete") addManifest();
+      else window.addEventListener("load", addManifest);
+    })();
+    </script>
   </body>
 </html>
